@@ -348,7 +348,7 @@ class Frame extends FramesAppModel {
 			}
 
 			$this->id = (int)$data['Frame']['id'];
-			if (! $this->saveField('weight', $data['Frame']['weight'])) {
+			if (! $this->saveField('weight', $data['Frame']['weight'], ['callbacks' => false])) {
 				throw new InternalErrorException(__d('net_commons', 'Internal Server Error'));
 			}
 
